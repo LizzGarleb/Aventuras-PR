@@ -61,11 +61,10 @@ main {
     text-align: left;
 }
 
-.interactive-map img {
-    width: 100%;
-    padding: 1rem;
+path:hover {
+    fill: #FFC286;
+    cursor: pointer;
 }
-
 .ending {
     position: fixed;
     text-align: center;
