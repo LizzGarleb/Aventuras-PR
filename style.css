@@ -1,76 +1,150 @@
-@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Serif&display=swap');
+/*
+ * To do: 
+ *      - Work with the text
+ *      - Color Palette, Font, and font size
+ *      - Footer (Logo and list) align text center
+ */
 
-* {
-    box-sizing: border-box;
+:root {
+    --primary: ;
+    --light-grey: #cccccc;
+}
+
+/* General Settings */
+body {
     margin: 0;
     padding: 0;
-    font-family: 'IBM Plex Serif', serif;
+    background-color: white;
+    color: black;
 }
-
-body {
-    display: grid;
-    place-content: center;
-    min-height: 100vh;
-    width: 100%;
-    background-color: #FFF1AF;
-}
-
-.nav-bar {
+/* Navbar Commands */
+.navbar {
     display: flex;
-    position: fixed;
+    justify-content: space-between;
+    align-items: center;
+    height: 75px;
+    padding: 0 5px;
+    border-bottom: 1px #cccccc solid;
 }
-
-.nav-bar img {
-
-    width: 10%;
-
+.nav-left img {
+    height: 50px;
+    margin-right: 20px;
 }
-
-ul {
-    background-color: #B4C6A6;
-    list-style-type: none;
-    position: fixed;
-    top: 0;
-    width: 100%;
+.nav-right {
+    display: flex;
+    align-items: center;
 }
-
-li {
-    float: left;
-}
-
-li a {
-    display: block;
-    color: white;
+.login, .signup {
     text-decoration: none;
-    padding: 14px 16px;
+}
+.login {
+    border: 1px solid; /* color for the border missing */
+    border-radius: 10px;
+    padding: 5px 10px;
+    /* Add background color for the log in button */
+}
+.vl {
+    border-left: 1px solid var(--light-grey);
+    height: 30px;
+    margin: 0 10px;
 }
 
-li a:hover {
-    background-color: #66806A;
+/* Hero Section Commands */
+.hero-section {
+    height: fit-content;
+    text-align: center;
+    padding: 5px;
 }
-
-.nav-list li {
-    display: block;
+.button-container {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
-
-main {
-    padding: 2rem;
+.btn-activity, .btn-stay, .btn-restaurant {
+    border: 1px solid var(--light-grey);
+    border-radius: 4px;
+    margin-bottom: 10px;
+    width: 150px;
+    height: 70px;
 }
-
-.main_test {
-    text-align: left;
+.btn-activity a, .btn-stay a, .btn-restaurant a {
+    text-decoration: none;
 }
-
-path:hover {
-    fill: #FFC286;
+.btn-activity:hover, .btn-stay:hover, .btn-restaurant:hover {
     cursor: pointer;
 }
-.ending {
-    position: fixed;
+
+/* Interactive Map Section Commands */
+.interactive-map-section {
     text-align: center;
-    width: 100%;
-    background-color: #B4C6A6;
-    padding: 2rem;
-    left: 0;
-    bottom: 0;
+    padding: 5px;
+}
+.map-btn {
+    border: 1px solid var(--light-grey);
+    border-radius: 4px;
+    width: 150px;
+    height: 70px;
+    margin-bottom: 10px;
+}
+.map-btn a {
+    text-decoration: none;
+}
+.map-btn:hover {
+    cursor: pointer;
+}
+
+/* Footer Section */
+footer {
+    display: block;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333333;
+    color: white;
+    padding: 20px;
+}
+.footer-left {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+.footer-left img {
+    height: 50px;
+    margin-right: 20px;
+}
+.vl-footer {
+    border-left: 1px solid var(--light-grey);
+    height: 35px;
+    margin: 0 20px;
+}
+.quick-links {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: block;
+}
+.quick-links a {
+    text-decoration: none;
+    color: white;
+}
+.footer-right {
+    text-align: center;
+    display: block;
+    align-items: center;
+}
+.footer-right input[type="email"] {
+    padding: 5px;
+    border-radius: 4px;
+    border: 1px solid var(--light-grey);
+    margin-top: 5px;
+}
+.footer-right button {
+    border: none;
+    background-color: #007bff;
+    color: #fff;
+    font-size: 16px;
+    padding: 5px 10px;
+    margin-top: 5px;
+    border-radius: 3px;
 }
