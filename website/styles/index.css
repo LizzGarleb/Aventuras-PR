@@ -1,0 +1,198 @@
+/*
+ * To do: 
+ *      - Work with the text
+ *      - Color Palette, Font, and font size
+ *      - Footer (Logo and list) align text center
+ */
+
+:root {
+    --primary: ;
+    --light-grey: #cccccc;
+}
+
+/* General Settings */
+body {
+    margin: 0;
+    padding: 0;
+    background-color: white;
+    color: black;
+}
+/* Navbar Commands */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 75px;
+    padding: 0 9px;
+    border-bottom: 1px #cccccc solid;
+}
+.nav-left img {
+    height: 50px;
+    margin-right: 20px;
+    border-radius: 50%;
+}
+.nav-right {
+    display: flex;
+    align-items: center;
+}
+.signup {
+    color: black;
+}
+.login, .signup {
+    text-decoration: none;
+}
+.login {
+    background-color: #007bff;
+    border-radius: 10px;
+    padding: 5px 10px;
+    color: white;
+}
+.vl {
+    border-left: 1px solid var(--light-grey);
+    height: 30px;
+    margin: 0 10px;
+}
+
+/* Hero Section Commands */
+.hero-section {
+    height: fit-content;
+    text-align: center;
+    padding: 5px;
+}
+.button-container {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.btn-activity, .btn-stay, .btn-restaurant {
+    border: 1px solid var(--light-grey);
+    border-radius: 4px;
+    margin-bottom: 10px;
+    width: 150px;
+    height: 70px;
+}
+.btn-activity a, .btn-stay a, .btn-restaurant a {
+    text-decoration: none;
+}
+.btn-activity:hover, .btn-stay:hover, .btn-restaurant:hover {
+    cursor: pointer;
+}
+
+/* Interactive Map Section Commands */
+.interactive-map-section {
+    text-align: center;
+    padding: 5px;
+}
+.map-btn {
+    border: 1px solid var(--light-grey);
+    border-radius: 4px;
+    width: 150px;
+    height: 70px;
+    margin-bottom: 10px;
+}
+.map-btn a {
+    text-decoration: none;
+}
+.map-btn:hover {
+    cursor: pointer;
+}
+
+/* Footer Section */
+footer {
+    display: block;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333333;
+    color: white;
+    padding: 20px;
+}
+.footer-left {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+.footer-left img {
+    height: 50px;
+    margin-right: 20px;
+    border-radius: 50%;
+}
+.vl-footer {
+    border-left: 1px solid var(--light-grey);
+    height: 35px;
+    margin: 0 20px;
+}
+.quick-links {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: block;
+}
+.quick-links a {
+    text-decoration: none;
+    color: white;
+}
+.footer-right {
+    text-align: center;
+    display: block;
+    align-items: center;
+}
+.footer-right input[type="email"] {
+    padding: 5px;
+    border-radius: 4px;
+    border: 1px solid var(--light-grey);
+    margin-top: 5px;
+}
+.footer-right button {
+    border: none;
+    background-color: #007bff;
+    color: #fff;
+    font-size: 16px;
+    padding: 5px 10px;
+    margin-top: 5px;
+    border-radius: 3px;
+}
+@media (min-width: 641px) {
+    .navbar {
+        height: 110px;
+        padding: 0 15px;
+    }
+    .login, .signup {
+        font-size: x-large;
+    }
+    .nav-left img {
+        height: 90px;
+    }
+    footer {
+        display: flex;
+        font-size: x-large
+    }
+    .footer-left {
+        display: flex;
+        vertical-align: top;
+        width: 50%;
+    }
+    .footer-left img {
+        height: 90px;
+    }
+    .footer-left ul {
+        display: inline;
+    }
+    .vl-footer {
+        height: 90px;
+    }
+    .footer-right {
+        width: 50%;
+        text-align: center;
+        display: block;
+    }
+    .footer-right input[type="email"] {
+        padding: 15px;
+        width: 250px;
+        font-size: large;
+    }
+    .footer-right button {
+        font-size: 24px;
+    }
+}
