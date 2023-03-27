@@ -5,30 +5,73 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Adventuras PR</title>
-    <link rel="stylesheet" href="styles/information.css">
+    <link rel="stylesheet" href="../styles/information.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
 </head>
 
 <body>
     <header>
         <nav class="navbar">
             <div class="nav-left">
-                <a href="#">
-                    <img src="" alt="Logo"> <!-- Add logo img -->
+                <a href="../html/index.html">
+                    <img src="../../dummy-logo.png" alt="Logo"> <!-- Add logo img -->
                 </a>
             </div>
             <div class="nav-right">
-                <a href="login.html" class="signup">Sign Up</a> <!-- Link to the sing up page -->
+                <a href="../html/login.html" class="signup">Sign Up</a> <!-- Link to the sing up page -->
                 <div class="vl"></div>
-                <a href="login.html" class="login">Log In</a> <!-- Link to the log in page-->
+                <a href="../html/login.html" class="login">Log In</a> <!-- Link to the log in page-->
             </div>
         </nav>
     </header>
     <main>
+        <div class="container">
+            <!-- Slider main container -->
+            <div class="swiper">
+                <!-- Additional required wrapper -->
+                <div class="swiper-wrapper">
+                    <!-- Slides -->
+                    <div class="swiper-slide"><img src="../../carousel-1.jpg"></div>
+                    <div class="swiper-slide"><img src="../../carousel-2.jpg"></div>
+                    <div class="swiper-slide"><img src="../../carousel-3.jpg"></div>
+                    <div class="swiper-slide"><img src="../../carousel-4.jpg"></div>
+                    <div class="swiper-slide"><img src="../../carousel-5.jpg"></div>
+                </div>
+                <!-- If we need pagination -->
+                <div class="swiper-pagination"></div>
+
+                <!-- If we need navigation buttons -->
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+            </div>
+        </div>
+        <div class="restaurant-info">
+            <h1>Castillo San Felipe del Morro</h1>
+            <div class="business-hours">
+                <p>Horarios de Servicio:</p>
+                <br>
+                <ul>
+                    <li>Lunes a Viernes: 9am - 10pm</li>
+                    <li>Sabado y Domingos: 10am - 11pm</li>
+                </ul>
+            </div>
+            <div class="contact-info">
+                <p>Telefono: 123-456-7890</p>
+                <hr>
+                <p>Pagina Web: www.example.com</p>
+                <hr>
+                <div class="social-icons">
+                    <a href="#"><img src="../images/facebook.png" alt=""></a>
+                    <a href="#"><img src="../images/instagram.png" alt=""></a>
+                </div>
+            </div>
+        </div>
+
     </main>
     <footer class="footer">
         <div class="footer-left">
             <a href="#">
-                <img src="images/dummy-logo" alt="Logo"> <!-- Logo img here -->
+                <img src="../../dummy-logo.png" alt="Logo"> <!-- Logo img here -->
             </a>
             <div class="vl-footer"></div>
             <ul class="quick-links"> <!-- Links to the sections here -->
@@ -51,6 +94,30 @@
             </form>
         </div>
     </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+
+
+    <script>
+        const swiper = new Swiper('.swiper', {
+            autoplay: {
+                delay: 3000,
+                disableOnInteraction: false,
+            },
+            loop: true,
+
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+        });
+
+    </script>
 </body>
 
 </html>

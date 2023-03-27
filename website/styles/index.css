@@ -1,12 +1,16 @@
 /*
  * To do: 
  *      - Work with the text
+ *      - Choose one measuring method for the page
  *      - Color Palette, Font, and font size
- *      - Footer (Logo and list) align text center
  */
 
 :root {
-    --primary: ;
+    --bittersweet: #ee6352;
+    --jet: #3a3335;
+    --pigmented-green: #53a548;
+    --papaya-whip: #fdf0d5;
+    --blue: #3277a9;
     --light-grey: #cccccc;
 }
 
@@ -17,6 +21,7 @@ body {
     background-color: white;
     color: black;
 }
+
 /* Navbar Commands */
 .navbar {
     display: flex;
@@ -53,8 +58,47 @@ body {
     margin: 0 10px;
 }
 
+/* New hero section */
+.hero {
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+}
+.hero video {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    object-fit: cover;
+}
+.hero .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+.hero-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    width: 95%;
+    text-align: center;
+}
+.hero-content h1 {
+    font-size: 2.5rem;
+}
+
+.hero-content p {
+    font-size: 1.5rem;
+}
+
 /* Hero Section Commands */
-.hero-section {
+.button-section {
     height: fit-content;
     text-align: center;
     padding: 5px;
@@ -65,16 +109,21 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    padding: 20px;
 }
 .btn-activity, .btn-stay, .btn-restaurant {
     border: 1px solid var(--light-grey);
     border-radius: 4px;
     margin-bottom: 10px;
-    width: 150px;
-    height: 70px;
+    font-size: medium;
+    width: 200px;
+    height: 130px;
+    background: var(--blue);
 }
 .btn-activity a, .btn-stay a, .btn-restaurant a {
     text-decoration: none;
+    color: white;
+    font-size: large;
 }
 .btn-activity:hover, .btn-stay:hover, .btn-restaurant:hover {
     cursor: pointer;
@@ -82,18 +131,23 @@ body {
 
 /* Interactive Map Section Commands */
 .interactive-map-section {
-    text-align: center;
-    padding: 5px;
+    padding: 20px;
+}
+.map-title {
+    font-size: 1.5rem;
 }
 .map-btn {
     border: 1px solid var(--light-grey);
     border-radius: 4px;
-    width: 150px;
-    height: 70px;
+    width: 200px;
+    height: 130px;
     margin-bottom: 10px;
+    background-color: var(--blue);
 }
 .map-btn a {
     text-decoration: none;
+    font-size: large;
+    color: white;
 }
 .map-btn:hover {
     cursor: pointer;
@@ -154,6 +208,7 @@ footer {
     border-radius: 3px;
 }
 @media (min-width: 641px) {
+    /* Navbar Changes */
     .navbar {
         height: 110px;
         padding: 0 15px;
@@ -164,6 +219,28 @@ footer {
     .nav-left img {
         height: 90px;
     }
+
+    /* Button container */
+    .button-container {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+    .btn-activity, .btn-stay, .btn-restaurant {
+        width: 250px;
+        height: 150px;
+    }
+
+    /* Mapa interactivo button */
+    .map-title {
+        font-size: 2rem;
+    }
+    .map-btn {
+        width: 250px;
+        height: 150px;
+    }
+
+    /* Footer section */
     footer {
         display: flex;
         font-size: x-large

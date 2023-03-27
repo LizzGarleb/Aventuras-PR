@@ -5,45 +5,57 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Adventuras PR</title>
-    <link rel="stylesheet" type="text/css" href="styles/index.css">
+    <link rel="stylesheet" type="text/css" href="../styles/index.css">
 </head>
 <!--
-    To Do List: 
-        how can I make the button fully send the person to the link without needed to press the text
+    To do list: 
+        - Add logos for the page
+        - Add links in the button section & interactive maps
+        - In the footer include social media links, terms and condition)
+        - Program the subscribe buttono to send a automatic email of welcome
 -->
-
 <body>
     <header>
         <nav class="navbar">
             <div class="nav-left">
                 <a href="#">
-                    <img src="dummy-logo.png" alt="Logo"> <!-- Add logo img -->
+                    <img src="../../dummy-logo.png" alt="Logo"> <!-- Add logo img -->
                 </a>
             </div>
             <div class="nav-right">
-                <a href="login.html" class="signup">Sign Up</a> <!-- Link to the sing up page -->
+                <a href="login.html" class="signup">Sign Up</a>
                 <div class="vl"></div>
-                <a href="login.html" class="login">Log In</a> <!-- Link to the log in page-->
+                <a href="login.html" class="login">Log In</a>
             </div>
         </nav>
     </header>
     <main>
-        <section class="hero-section">
-            <h2 class="hero-title">¡Tu próxima aventura te espera!</h2>
+        <section class="hero">
+            <video autoplay loop muted>
+                <source src="../../hero-video.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <div class="overlay"></div>
+            <div class="hero-content">
+                <h1>¡Tu próxima aventura te espera!</h1>
+                <p>Sol, playa y mas...</p>
+            </div>
+        </section>
+        <section class="button-section">
             <div class="button-container">
                 <button class="btn-activity">
-                    <a href="#">Entretenimientos</a> <!-- Add link to activity page -->
+                    <a href="#">Entretenimientos</a>
                 </button>
                 <button class="btn-stay">
-                    <a href="#">Alojamientos</a> <!-- Add link to stay page -->
+                    <a href="#">Alojamientos</a>
                 </button>
                 <button class="btn-restaurant">
-                    <a href="#">Restaurantes</a> <!-- Add link to restaurant page -->
+                    <a href="#">Restaurantes</a>
                 </button>
             </div>
         </section>
         <section class="interactive-map-section">
-            <h2 class="map-title">¿Estás indeciso?<br>Chequea nuestro mapa Interactivo</h2>
+            <h2 class="map-title">¿Estás indeciso?<br>Chequea nuestro mapa interactivo</h2>
             <div class="button-container">
                 <button class="map-btn">
                     <a href="#">Mapa Interactivo</a> <!-- Add link to interactive map -->
@@ -54,7 +66,7 @@
     <footer class="footer">
         <div class="footer-left">
             <a href="#">
-                <img src="dummy-logo.png" alt="Logo"> <!-- Logo img here -->
+                <img src="../../dummy-logo.png" alt="Logo">
             </a>
             <div class="vl-footer"></div>
             <ul class="quick-links"> <!-- Links to the sections here -->
