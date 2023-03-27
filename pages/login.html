@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Adventuras PR</title>
+    <link rel="stylesheet" href="../css/login.css">
+</head>
+
+<body>
+    <div class="hero">
+        <div class="form-box">
+            <div class="button-box">
+                <div id="btn"></div>
+                <button type="button" class="toggle-btn" onclick="login()"> Log In</button>
+                <button type="button" class="toggle-btn" onclick="signup()"> Sign Up</button>
+            </div>
+            <div class="social-icons"><!--Missing a tag links-->
+                <a><img src="../images/icons/google.png"></a>
+                <a><img src="../images/icons/apple-logo.png"></a>
+                <a><img src="../images/icons/facebook.png"></a>
+                <a><img src="../images/icons/instagram.png"></a>
+            </div>
+            <div class="divider-social">
+                <hr class="center">
+                <p>or</p>
+                <hr class="center">
+            </div>
+            <form id="login" class="input-group">
+                <input type="email" class="input-field" placeholder="Email" required>
+                <input type="password" class="input-field" placeholder="Contrasena" required>
+                <button type="submit" class="submit-btn">Log In</button>
+            </form>
+            <form id="signup" class="input-group">
+                <input type="text" class="input-field" placeholder="Nombre" required>
+                <input type="text" class="input-field" placeholder="Apellido" required>
+                <input type="email" class="input-field" placeholder="Email" required>
+                <input type="password" class="input-field" placeholder="Contrasena" required>
+                <input type="checkbox" class="check-box"><span>I agree to the terms & conditions</span>
+                <button type="submit" class="submit-btn">Sign Up</button>
+            </form>
+        </div>
+    </div>
+    <script src="../js/login.js"></script>
+</body>
+
+</html>
