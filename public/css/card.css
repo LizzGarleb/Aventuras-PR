@@ -16,6 +16,7 @@ body {
 .image-area img {
     width: 100%;
     border-radius: 0%;
+    max-height: fit-content;
 }
 h2 {
     font-size: large;
