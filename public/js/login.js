@@ -48,5 +48,3 @@ function submitForm(event) {
       alert('Error submitting the form. Please try again.');
     });
 }
-
-

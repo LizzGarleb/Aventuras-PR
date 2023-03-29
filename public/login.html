@@ -32,12 +32,12 @@
                 <input type="password" name="Contrasena" class="input-field" placeholder="Contrasena" required>
                 <button type="submit" class="submit-btn">Log In</button>
             </form>
-            <form id="signup" class="input-group" onsubmit="submitForm(event)" method="post">
+            <form id="signup" class="input-group" action="/signup" method="post">
                 <input type="text" class="input-field" name="Nombre" placeholder="Nombre" required>
                 <input type="text" class="input-field" name="Apellido" placeholder="Apellido" required>
                 <input type="email" class="input-field" name="Email" placeholder="Email" required>
                 <input type="password" class="input-field" name="Contrasena" placeholder="Contrasena" required>
-                <input type="checkbox" class="check-box"><span>I agree to the terms & conditions</span>
+                <input type="checkbox" class="check-box" required><span>I agree to the terms & conditions</span>
                 <button type="submit" class="submit-btn">Sign Up</button>
             </form>
             <div id="success-message" style="display:none;">

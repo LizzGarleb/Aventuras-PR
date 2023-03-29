@@ -11,14 +11,14 @@ app.use(express.static('public'));
 app.post('/signup', (req, res) => {
   const { Nombre, Apellido, Email, Contrasena } = req.body;
 
-  const query = 'INSERT INTO users (first_name, last_name, email, password) VALUES (?, ?, ?, ?)';
+  const query = 'INSERT INTO users (name, last_name, email, password) VALUES (?, ?, ?, ?)';
   
   pool.query(query, [Nombre, Apellido, Email, Contrasena], (error, result) => {
     if (error) {
       console.error('Error inserting data:', error);
       res.status(500).send('Error saving data');
     } else {
-      res.status(200).redirect('/success.html');
+      res.status(200).send('Registration successful!');
     }
   });
 });
