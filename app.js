@@ -23,6 +23,25 @@ app.post('/signup', (req, res) => {
   });
 });
 
+app.post('/login', (req, res) => {
+  const { Email, Contrasena } = req.body;
+
+  const query = 'SELECT * FROM users WHERE email = ? AND password = ?';
+  
+  pool.query(query, [Email, Contrasena], (error, result) => {
+    if (error) {
+      console.error('Error querying data:', error);
+      res.status(500).send('Error retrieving data');
+    } else {
+      if (result.length === 1) {
+        res.status(200).send('Log in successful!'); // Redirect to dashboard if login is successful
+      } else {
+        res.status(401).send('Invalid email or password'); // Return an error message if login is unsuccessful
+      }
+    }
+  });
+});
+
 app.listen(3000, () => {
   console.log('Server started on port 3000');
 });
