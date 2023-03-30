@@ -6,18 +6,17 @@ const pool = require('./db_connection');
 app.set('view engine', 'ejs');
 
 app.use(express.static('public'));
-
-// Route to display the card with dynamic content
-app.get('/card', (req, res) => {
-  // Fetch the data from the database using a query
-  const query = 'SELECT * FROM activitys WHERE id = 2';
+// Route to display all cards with dynamic content
+app.get('/cards', (req, res) => {
+  // Fetch all data from the database using a query
+  const query = 'SELECT * FROM activitys';
   pool.query(query, (error, result) => {
     if (error) {
       console.error('Error querying data:', error);
       res.status(500).send('Error retrieving data');
     } else {
       // Pass the data to the template engine as variables
-      res.render('card', { data: result[0] });
+      res.render('cards', { data: result });
     }
   });
 });
