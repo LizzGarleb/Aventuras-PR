@@ -145,14 +145,7 @@ body {
     width: 180px;
     height: 100px;
     background: var(--blue);
-}
-
-.btn-activity a,
-.btn-stay a,
-.btn-restaurant a {
-    text-decoration: none;
     color: white;
-    font-size: large;
 }
 
 .btn-activity:hover,
