@@ -5,6 +5,9 @@
  *      - Color Palette, Font, and font size
  */
 
+
+
+/* General Settings */
 :root {
     --bittersweet: #ee6352;
     --jet: #3a3335;
@@ -14,7 +17,6 @@
     --light-grey: #cccccc;
 }
 
-/* General Settings */
 body {
     margin: 0;
     padding: 0;

@@ -1,3 +1,4 @@
+/* Nav bar */
 .navbar {
     display: flex;
     justify-content: space-between;
@@ -41,6 +42,16 @@
     margin: 0 10px;
 }
 
+/* Card design */
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    background-color: beige;
+    padding: 20px;
+}
+
 .card {
     background-color: white;
     width: 250px;
@@ -49,19 +60,23 @@
     padding: 10px;
     border: 1px solid #cccccc
 }
+
 .image-area {
     justify-content: center;
     text-align: center;
 }
+
 .image-area img {
     width: 100%;
     border-radius: 0%;
     max-height: fit-content;
 }
+
 h2 {
     font-size: large;
 }
 
+/* Footer */
 footer {
     display: block;
     justify-content: space-between;
@@ -122,13 +137,4 @@ footer {
     padding: 5px 10px;
     margin-top: 5px;
     border-radius: 3px;
-}
-
-.container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
-    background-color: beige;
-    padding: 20px;
 }
