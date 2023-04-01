@@ -1,6 +1,6 @@
 const LocalStrategy = require('passport-local').Strategy;
 const bcrypt = require('bcrypt');
-const pool = require('../db_connection');
+const pool = require('./db_connection');
 
 function initialize(passport) {
     const authenticateUser = async (email, password, done) => {
@@ -41,4 +41,4 @@ function initialize(passport) {
     });
 }
 
-module.exports = initialize
+module.exports = initialize;
