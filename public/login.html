@@ -28,15 +28,15 @@
                 <hr class="center">
             </div>
             <form id="login" class="input-group" action="/login" method="post">
-                <input type="email" name="Email" class="input-field" placeholder="Email" required>
-                <input type="password" name="Contrasena" class="input-field" placeholder="Contraseña" required>
+                <input type="email" id="login-email" name="Email" class="input-field" placeholder="Email" required>
+                <input type="password" id="login-password" name="Contrasena" class="input-field" placeholder="Contraseña" required>
                 <button type="submit" class="submit-btn">Log In</button> <!-- TODO (Assign link to dashboard) -->
             </form>
             <form id="signup" class="input-group" action="/signup" method="post">
-                <input type="text" class="input-field" name="Nombre" placeholder="Nombre" required>
-                <input type="text" class="input-field" name="Apellido" placeholder="Apellido" required>
-                <input type="email" class="input-field" name="Email" placeholder="Email" required>
-                <input type="password" class="input-field" name="Contrasena" placeholder="Contraseña" required>
+                <input type="text" id="signup-name" class="input-field" name="Nombre" placeholder="Nombre" required>
+                <input type="text" id="signup-lastname" class="input-field" name="Apellido" placeholder="Apellido" required>
+                <input type="email" id="signup-email" class="input-field" name="Email" placeholder="Email" required>
+                <input type="password" id="signup-password" class="input-field" name="Contrasena" placeholder="Contraseña" required>
                 <input type="checkbox" class="check-box" required> <span>I agree to the terms & conditions</span>
                 <button type="submit" class="submit-btn">Sign Up</button> <!-- TODO (Assign link to dashboard) & (Create welcome email to send when they submit) -->
             </form>

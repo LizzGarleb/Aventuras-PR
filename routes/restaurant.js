@@ -2,8 +2,8 @@ const express = require('express');
 const router = express.Router();
 const pool = require('../db_connection');
 
-router.get('/activitys', (req, res) => {
-    const query = 'SELECT * FROM activitys';
+router.get('/restaurant', (req, res) => {
+    const query = 'SELECT * FROM restaurants';
     pool.query(query, (error, result) => {
         if (error) {
             console.error('Error querying data:', error);

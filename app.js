@@ -9,6 +9,8 @@ const port = 3000;
 const app = express();
 const authRoutes = require('./routes/auth');
 const activitysRoutes = require('./routes/activitys');
+const restaurantRoutes = require('./routes/restaurant');
+const stayRoutes = require('./routes/stay');
 
 app.use(bodyParser.urlencoded({ extended: false }));
 
@@ -16,6 +18,8 @@ app.set('view engine', 'ejs');
 
 app.use(authRoutes);
 app.use(activitysRoutes);
+app.use(restaurantRoutes);
+app.use(stayRoutes);
 
 app.use(express.static('public'));
 
