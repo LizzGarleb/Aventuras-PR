@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Adventuras PR</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"
+    integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI=" crossorigin="" />
+  <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"
+    integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM=" crossorigin=""></script>
+  <style>
+    /* Fullscreen map */
+    #map {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+    }
+
+    /* Navbar */
+    .navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background-color: rgba(255, 255, 255, 0.8);
+      padding: 10px 20px;
+      z-index: 3;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    /* Toggle button container */
+    .toggle-container {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      background-color: rgba(255, 255, 255, 0.8);
+      border-radius: 20px;
+      padding: 5px 10px;
+      z-index: 2;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    /* Toggle button */
+    .toggle-button {
+      padding: 5px 10px;
+      cursor: pointer;
+      border: none;
+      background: none;
+      outline: none;
+    }
+
+    /* Active toggle button */
+    .toggle-button.active {
+      font-weight: bold;
+    }
+
+    .card {
+      background-color: white;
+      width: 250px;
+      height: 250px;
+      border-radius: 5%;
+      padding: 10px;
+      border: 1px solid #cccccc
+    }
+
+    .image-area {
+      justify-content: center;
+      text-align: center;
+    }
+
+    .image-area img {
+      width: 100%;
+      border-radius: 0%;
+      max-height: fit-content;
+    }
+
+    h2 {
+      font-size: large;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <nav class="navbar">
+      <div class="nav-left">
+        <a href="#">
+          <img src="" alt="Logo"> <!-- TODO (Add logo img) -->
+        </a>
+      </div>
+      <div class="nav-right">
+        <a href="/signup" class="signup">Sign Up</a>
+        <div class="vl"></div>
+        <a href="/login" class="login">Log In</a>
+      </div>
+    </nav>
+  </header>
+  <main>
+    <div id="map"></div>
+    <div class="toggle-container">
+      <button id="map-toggle" class="toggle-button active">Map</button>
+      <button id="list-toggle" class="toggle-button">List</button>
+    </div>
+  </main>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const map = L.map('map').setView([18.2208, -66.5901], 9);
+
+      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+      }).addTo(map);
+
+      fetch('/activitys/mapdata')
+        .then(response => response.json())
+        .then(data => {
+          data.forEach(markerData => {
+            const marker = L.marker([markerData.lat, markerData.lng]).addTo(map);
+
+            const popupContent = `
+                <div class="card">
+                <div class="image-area">
+                  <img src="${markerData.image}" alt="${markerData.name}">
+                </div>
+                <div class="content">
+                  <h2>${markerData.name}</h2>
+                </div>
+              </div>
+            `;
+            marker.bindPopup(popupContent);
+          });
+        })
+        .catch(error => console.error('Error fetching map data:', error));
+    });
+  </script>
+</body>
+
+</html>
