@@ -14,8 +14,6 @@ initializePassport(
     id => users.find(user => user.id === id)
 )
 
-const users = []
-
 router.use(express.urlencoded({ extended: false }));
 router.use(flash())
 router.use(session({
@@ -27,21 +25,34 @@ router.use(passport.initialize())
 router.use(passport.session())
 router.use(methodOverride('_method'))
 
-router.get('/', checkAuthenticated, (req, res) => {
-    res.render('index.ejs');
+router.post('/login', (req, res) => {
+  const { Email, Contrasena } = req.body;
+
+  const query = 'SELECT * FROM users WHERE email = ?';
+  
+  pool.query(query, [Email], async (error, result) => {
+    if (error) {
+      console.error('Error querying data:', error);
+      res.status(500).send('Error retrieving data');
+    } else {
+      if (result.length === 1) {
+        const user = result[0];
+        const isPasswordMatch = await bcrypt.compare(Contrasena, user.password);
+  
+        if (isPasswordMatch) {
+          res.status(200).send('Log in successful!'); // Redirect to dashboard if login is successful
+        } else {
+          res.status(401).send('Invalid email or password'); // Return an error message if login is unsuccessful
+        }
+      } else {
+        res.status(401).send('Invalid email or password'); // Return an error message if login is unsuccessful
+      }
+    }
+  });
+  
 });
 
-router.get('/login', checkAuthenticated, (req, res) => {
-  res.render('index.ejs')
-});
-
-router.post('/login', checkNotAuthenticated, passport.authenticate('local', {
-  successRedirect: '/',
-  failureRedirect: '/login', 
-  failureFlash: true
-}))
-
-router.post('/signup', checkNotAuthenticated, async (req, res) => {
+router.post('/signup', async (req, res) => {
   try {
     const hashedPassword = await bcrypt.hash(req.body.Contrasena, 10);
     const { Nombre, Apellido, Email } = req.body;
@@ -65,18 +76,5 @@ router.delete('/logout', (req, res) => {
     res.redirect('/login');
 });
 
-function checkAuthenticated(req, res, next) {
-  if (req.isAuthenticated()) {
-      return next()
-  }
-  res.redirect('/login')
-}
-
-function checkNotAuthenticated(req, res, next) {
-  if (req.isAuthenticated()) {
-      return res.redirect('/')
-  }
-  next()
-}
 
 module.exports = router
