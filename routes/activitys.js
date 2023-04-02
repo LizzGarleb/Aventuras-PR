@@ -27,7 +27,7 @@ router.get('/activitys/mapdata', (req, res) => {
   });
 
   router.get('/activitys/map', (req, res) => {
-    res.render('map');
-});
+    res.render('map', {dataType: 'activitys'});
+  });
 
 module.exports = router;

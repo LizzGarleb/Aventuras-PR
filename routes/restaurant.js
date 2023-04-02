@@ -14,4 +14,20 @@ router.get('/restaurant', (req, res) => {
     });
 });
 
+router.get('/restaurant/mapdata', (req, res) => {
+    const query = 'SELECT * FROM restaurants';
+    pool.query(query, (error, result) => {
+      if (error) {
+        console.error('Error querying data:', error);
+        res.status(500).send('Error retrieving data');
+      } else {
+        res.json(result);
+      }
+    });
+  });
+
+  router.get('/restaurant/map', (req, res) => {
+    res.render('map', {dataType: 'restaurant'});
+  });
+
 module.exports = router;

@@ -18,9 +18,12 @@ body {
 
 /* Navbar Commands */
 .navbar {
-
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 75px;
     padding: 0 9px;
-
+    border-bottom: 1px #cccccc solid;
 }
 
 .nav-left img {

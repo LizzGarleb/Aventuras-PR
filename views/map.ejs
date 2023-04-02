@@ -148,14 +148,14 @@
   <script>
     document.addEventListener('DOMContentLoaded', function () {
       const map = L.map('map').setView([18.2208, -66.4], 10);
-
+      const dataType = "<%= dataType %>";
       const googleStreets = L.tileLayer('http://{s}.google.com/vt/lyrs=m&x={x}&y={y}&z={z}', {
         maxZoom: 20,
         subdomains: ['mt0', 'mt1', 'mt2', 'mt3']
       });
 
       googleStreets.addTo(map);
-      fetch('/activitys/mapdata')
+      fetch('/' + dataType + '/mapdata')
         .then(response => response.json())
         .then(data => {
           data.forEach(markerData => {
@@ -168,6 +168,7 @@
                 </div>
                 <div class="content">
                   <h2>${markerData.name}</h2>
+                  <p>${markerData.description}</p>
                 </div>
               </div>
             `;
