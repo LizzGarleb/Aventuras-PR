@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const pool = require('../db_connection');
+const pool = require('../config/db_connection');
 
 router.get('/restaurant', (req, res) => {
     const query = 'SELECT * FROM restaurants';

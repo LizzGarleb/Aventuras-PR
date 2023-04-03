@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const pool = require('../db_connection');
+const pool = require('../config/db_connection');
 const bcrypt = require('bcrypt');
 const passport = require('passport');
 const flash = require('express-flash');
@@ -9,7 +9,7 @@ const methodOverride = require('method-override');
 const nodemailer = require('nodemailer');
 const crypto = require('crypto');
 
-const initializePassport = require('../passport-config')
+const initializePassport = require('../config/passport-config')
 initializePassport(
     passport, 
     email => users.find(user => user.email === email),
