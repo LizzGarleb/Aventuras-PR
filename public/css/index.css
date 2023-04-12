@@ -1,4 +1,3 @@
-
 /* General Settings */
 :root {
     --bittersweet: #ee6352;
@@ -9,69 +8,29 @@
     --light-grey: #cccccc;
 }
 
-body {
-    margin: 0;
-    padding: 0;
-    color: black;
-    background-color: white;
-}
-
-/* Navbar Commands */
+/* Navbar with bootstrap implemented*/
 .navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height: 75px;
-    padding: 0 9px;
     border-bottom: 1px #cccccc solid;
 }
 
-.nav-left img {
-    height: 50px;
-    margin-right: 20px;
-    border-radius: 50%;
-}
-
-.nav-right {
-    display: flex;
-    align-items: center;
-}
-
 .signup {
     color: black;
-}
-
-.login,
-.signup {
     text-decoration: none;
+    margin-right: 10px;
+    margin-top: 7px;
 }
 
 .login {
-    background-color: #007bff;
-    border-radius: 10px;
-    padding: 5px 10px;
-    color: white;
+    margin-bottom: 7px;
 }
 
-.vl {
-    border-left: 1px solid var(--light-grey);
-    height: 30px;
-    margin: 0 10px;
-}
-
-/* New hero section */
+/* Hero section with boostrap implemented */
 .hero {
-    height: 100vh;
     position: relative;
     overflow: hidden;
 }
 
 .hero video {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
     object-fit: cover;
 }
 
@@ -84,269 +43,25 @@ body {
     background-color: rgba(0, 0, 0, 0.5);
 }
 
-.hero-content {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: white;
-    width: 95%;
-    text-align: center;
-}
-
-.hero-content h1 {
-    font-size: 2.5rem;
-}
-
-.hero-content p {
-    font-size: 1.5rem;
-}
-
-/* Options Commands */
+/* Section 2 */
 .button-section {
-    height: fit-content;
-    text-align: center;
-    padding: 5px;
     background-color: var(--papaya-whip);
 }
 
-.ilustration img {
-    max-width: 100%;
-    padding-top: 25px;
-}
-
-.ilustration {
-    font-size: medium;
-}
-
-.button-container {
-    height: 100%;
+.custom-btn {
+    width: 250px;
+    min-height: 60px;
     display: flex;
-    flex-direction: column;
+    align-items: center;
     justify-content: center;
-    align-items: center;
-    padding: 20px;
 }
 
-.btn-activity,
-.btn-stay,
-.btn-restaurant {
-    border: 1px solid var(--light-grey);
-    border-radius: 4px;
-    margin-bottom: 10px;
-    font-size: medium;
-    width: 180px;
-    height: 100px;
-    background: var(--blue);
-    color: white;
-}
-
-.btn-activity:hover,
-.btn-stay:hover,
-.btn-restaurant:hover {
-    cursor: pointer;
-}
-
-/* Interactive Map Section Commands */
-.interactive-map {
-    height: fit-content;
-    text-align: center;
-    padding: 5px;
-}
-
-.ilustration-map img {
-    max-width: 100%;
-    padding-top: 25px;
-}
-
-.ilustration-map {
-    font-size: medium;
-}
-
-.button-container-map {
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 20px;
-}
-
-.map-btn {
-    border: 1px solid var(--light-grey);
-    border-radius: 4px;
-    width: 180px;
-    height: 100px;
-    margin-bottom: 10px;
-    background-color: var(--blue);
-}
-
-.map-btn a {
-    text-decoration: none;
-    font-size: large;
-    color: white;
-}
-
-.map-btn:hover {
-    cursor: pointer;
-}
-
-/* Footer Section */
-footer {
-    display: block;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #333333;
-    color: white;
-    padding: 20px;
-}
-
-.footer-left {
-    display: flex;
-    align-items: center;
-    margin-bottom: 10px;
-}
-
-.footer-left img {
-    height: 50px;
-    margin-right: 20px;
-    border-radius: 50%;
-}
-
-.vl-footer {
-    border-left: 1px solid var(--light-grey);
-    height: 35px;
-    margin: 0 20px;
-}
-
+/* Footer with bootstrap implemented */
 .quick-links {
     list-style: none;
-    margin: 0;
-    padding: 0;
-    display: block;
 }
 
 .quick-links a {
     text-decoration: none;
     color: white;
-}
-
-.footer-right {
-    text-align: center;
-    display: block;
-    align-items: center;
-}
-
-.footer-right input[type="email"] {
-    padding: 5px;
-    border-radius: 4px;
-    border: 1px solid var(--light-grey);
-    margin-top: 5px;
-}
-
-.footer-right button {
-    border: none;
-    background-color: #007bff;
-    color: #fff;
-    font-size: 16px;
-    padding: 5px 10px;
-    margin-top: 5px;
-    border-radius: 3px;
-}
-
-@media (min-width: 641px) {
-
-    /* Navbar Changes */
-    .navbar {
-        height: 110px;
-        padding: 0 15px;
-    }
-
-    .login,
-    .signup {
-        font-size: x-large;
-    }
-
-    .nav-left img {
-        height: 90px;
-    }
-
-    /* Button container */
-    .button-container {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-evenly;
-    }
-
-    .btn-activity,
-    .btn-stay,
-    .btn-restaurant {
-        width: 250px;
-        height: 150px;
-    }
-
-    /* Mapa interactivo button */
-    .interactive-map {
-        display: flex;
-        align-items: center;
-        width: 100%;
-    }
-
-    .ilustration-map {
-        width: 50%;
-        font-size: x-large;
-    }
-
-    .ilustration {
-        font-size: x-large;
-    }
-
-    .button-container-map {
-        width: 50%;
-    }
-
-    .map-btn {
-        width: 250px;
-        height: 150px;
-    }
-
-    /* Footer section */
-    footer {
-        display: flex;
-        font-size: x-large
-    }
-
-    .footer-left {
-        display: flex;
-        vertical-align: top;
-        width: 50%;
-    }
-
-    .footer-left img {
-        height: 90px;
-    }
-
-    .footer-left ul {
-        display: inline;
-    }
-
-    .vl-footer {
-        height: 90px;
-    }
-
-    .footer-right {
-        width: 50%;
-        text-align: center;
-        display: block;
-    }
-
-    .footer-right input[type="email"] {
-        padding: 15px;
-        width: 250px;
-        font-size: large;
-    }
-
-    .footer-right button {
-        font-size: 24px;
-    }
 }
