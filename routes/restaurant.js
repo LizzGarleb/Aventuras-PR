@@ -9,7 +9,7 @@ router.get('/restaurant', (req, res) => {
             console.error('Error querying data:', error);
             res.status(500).send('Error retrieving data');
         } else {
-            res.render('cards', { data: result });
+            res.render('cards', { data: result, routePrefix: '/restaurant' });
         }
     });
 });
@@ -26,8 +26,21 @@ router.get('/restaurant/mapdata', (req, res) => {
     });
   });
 
-  router.get('/restaurant/map', (req, res) => {
-    res.render('map', {dataType: 'restaurant'});
+router.get('/restaurant/map', (req, res) => {
+  res.render('map', {dataType: 'restaurant'});
+});
+
+router.get('/restaurant/:id', (req, res) => {
+  const id = req.params.id;
+  const query = 'SELECT * FROM restaurants WHERE id = ?';
+  pool.query(query, [id], (error, result) => {
+    if (error) {
+      console.error('Error querying data:', error);
+      res.status(500).send('Error querying data');
+    } else {
+      res.render('info', { data: result[0] });
+    }
   });
+});
 
 module.exports = router;

@@ -9,7 +9,7 @@ router.get('/activitys', (req, res) => {
             console.error('Error querying data:', error);
             res.status(500).send('Error retrieving data');
         } else {
-            res.render('cards', { data: result });
+            res.render('cards', { data: result, routePrefix: '/activitys' });
         }
     });
 });
@@ -26,8 +26,21 @@ router.get('/activitys/mapdata', (req, res) => {
     });
   });
 
-  router.get('/activitys/map', (req, res) => {
-    res.render('map', {dataType: 'activitys'});
+router.get('/activitys/map', (req, res) => {
+  res.render('map', {dataType: 'activitys'});
+});
+
+router.get('/activitys/:id', (req, res) => {
+  const id = req.params.id;
+  const query = 'SELECT * FROM activitys WHERE id = ?';
+  pool.query(query, [id], (error, result) => {
+    if (error) {
+      console.error('Error querying data:', error);
+      res.status(500).send('Error querying data');
+    } else {
+      res.render('info', { data: result[0] });
+    }
   });
+});
 
 module.exports = router;

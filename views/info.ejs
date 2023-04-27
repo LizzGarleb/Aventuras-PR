@@ -3,13 +3,15 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Adventuras PR</title>
-    <link rel="stylesheet" type="text/css" href="css/list_layout.css">
+    <link rel="stylesheet" href="/css/information.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    </head>
 </head>
 
 <body>
@@ -29,27 +31,46 @@
         </nav>
     </header>
     <main>
-        <div class="container-fluid mt-4">
-            <div class="row">
-                <% for (const card of data) { %>
-                    <div class="col-md-4 col-lg-3 mb-4">
-                        <a href="<%= routePrefix %>/<%= card.id %>">
-                        <div class="card h-100">
-                            <img src="<%= card.image %>" alt="banner-pic" class="card-img-top">
-                            <div class="card-body">
-                                <h4 class="card-title">
-                                    <%= card.name %>
-                                </h4>
-                                <address class="card-text">
-                                    <%= card.location %>
-                                </address>
-                            </div>
-                        </div>
-                        </a>
-                    </div>
-                    <% } %>
+        <div class="container-content">
+            <!-- Slider main container -->
+            <div class="swiper">
+                <!-- Additional required wrapper -->
+                <div class="swiper-wrapper">
+                    <!-- Slides -->
+                    <div class="swiper-slide"><img src="../carousel-1.jpg"></div>
+                    <div class="swiper-slide"><img src="../carousel-2.jpg"></div>
+                    <div class="swiper-slide"><img src="../carousel-3.jpg"></div>
+                    <div class="swiper-slide"><img src="../carousel-4.jpg"></div>
+                    <div class="swiper-slide"><img src="../carousel-5.jpg"></div>
+                </div>
+                <div class="swiper-pagination"></div>
+
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
             </div>
         </div>
+        <div class="restaurant-info">
+            <h1>Castillo San Felipe del Morro</h1>
+            <div class="business-hours">
+                <p>Horarios de Servicio:</p>
+                <br>
+                <ul>
+                    <li>Lunes a Viernes: 9am - 10pm</li>
+                    <li>Sabado y Domingos: 10am - 11pm</li>
+                </ul>
+            </div>
+            <div class="contact-info">
+                <p>Telefono: 123-456-7890</p>
+                <hr>
+                <p>Pagina Web: www.example.com</p>
+                <hr>
+                <div class="social-icons">
+                    <a href="#"><img src="../images/icons/facebook.png" alt=""></a>
+                    <a href="#"><img src="../images/icons/instagram.png" alt=""></a>
+                </div>
+            </div>
+        </div>
+
     </main>
     <footer class="bg-dark text-white mt-5 py-4">
         <div class="container">
@@ -84,6 +105,7 @@
             </div>
         </div>
     </footer>
+    <script src="../js/information.js"></script>
 </body>
 
 </html>
