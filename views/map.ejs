@@ -142,7 +142,7 @@
                 const marker = L.marker([markerData.lat, markerData.lng]).addTo(map);
 
                 const popupContent = `
-                    <div class="card">
+                <a href="/${dataType}/${markerData.id}" class="card">
                     <div class="image-area">
                     <img src="${markerData.image}" alt="${markerData.name}">
                     </div>
@@ -150,7 +150,7 @@
                     <h2>${markerData.name}</h2>
                     <p>${markerData.description}</p>
                     </div>
-                </div>
+                </a>
                 `;
                 marker.bindPopup(popupContent);
             });
