@@ -11,7 +11,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    </head>
+</head>
 </head>
 
 <body>
@@ -31,13 +31,13 @@
         </nav>
     </header>
     <main>
-        <div class="container-content">
+        <div class="container-content container-fluid">
             <!-- Slider main container -->
             <div class="swiper">
                 <!-- Additional required wrapper -->
                 <div class="swiper-wrapper">
                     <!-- Slides -->
-                    <div class="swiper-slide"><img src="../carousel-1.jpg"></div>
+                    <div class="swiper-slide"><img src="../"></div>
                     <div class="swiper-slide"><img src="../carousel-2.jpg"></div>
                     <div class="swiper-slide"><img src="../carousel-3.jpg"></div>
                     <div class="swiper-slide"><img src="../carousel-4.jpg"></div>
@@ -49,28 +49,46 @@
                 <div class="swiper-button-next"></div>
             </div>
         </div>
-        <div class="restaurant-info">
-            <h1>Castillo San Felipe del Morro</h1>
-            <div class="business-hours">
-                <p>Horarios de Servicio:</p>
-                <br>
-                <ul>
-                    <li>Lunes a Viernes: 9am - 10pm</li>
-                    <li>Sabado y Domingos: 10am - 11pm</li>
-                </ul>
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-12 text-center">
+                    <h1>
+                        <%= information.name %></h1>
+                </div>
             </div>
-            <div class="contact-info">
-                <p>Telefono: 123-456-7890</p>
-                <hr>
-                <p>Pagina Web: www.example.com</p>
-                <hr>
-                <div class="social-icons">
-                    <a href="#"><img src="../images/icons/facebook.png" alt=""></a>
-                    <a href="#"><img src="../images/icons/instagram.png" alt=""></a>
+            <div class="row justify-content-between mt-4">
+                <div class="col-md-5">
+                    <div class="business-hours">
+                        <p>Horarios de Servicio:</p>
+                        <ul>
+                            <% Object.entries(businessHours).map(([day, hours])=> { %>
+                                <li><%= day %>: <%= hours %></li>
+                            <% }); %>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-5">
+                    <div class="contact-info">
+                        <% if (information.phone_number) { %>
+                            <p>Telefono: <%= information.phone_number %></p>
+                            <hr>
+                        <% } %>
+                        <% if (information.website) { %>
+                            <p>Pagina Web: <%= information.website %></p>
+                            <hr>
+                         <% } %>
+                        <div class="social-icons">
+                            <% if (information.facebook) { %>
+                                <a href="<%= information.facebook %>"><img src="../images/icons/facebook.png"alt=""></a>
+                            <% } %>
+                            <% if (information.instagram) { %>
+                                <a href="<%= information.instagram %>"><img src="../images/icons/instagram.png" alt=""></a>
+                            <% } %>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-
     </main>
     <footer class="bg-dark text-white mt-5 py-4">
         <div class="container">

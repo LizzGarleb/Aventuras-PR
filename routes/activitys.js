@@ -38,7 +38,9 @@ router.get('/activitys/:id', (req, res) => {
       console.error('Error querying data:', error);
       res.status(500).send('Error querying data');
     } else {
-      res.render('info', { data: result[0] });
+      const information = result[0];
+      const businessHours = JSON.parse(information.business_hours);
+      res.render('info', { information, businessHours });
     }
   });
 });
