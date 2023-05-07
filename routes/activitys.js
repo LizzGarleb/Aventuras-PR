@@ -9,7 +9,6 @@ router.get('/activitys', (req, res) => {
       console.error('Error querying data:', error);
       res.status(500).send('Error retrieving data');
     } else {
-      console.log(typeof(res));
       res.render('cards', { data: result, routePrefix: '/activitys' });
     }
   });
@@ -28,7 +27,7 @@ router.get('/activitys/mapdata', (req, res) => {
 });
 
 router.get('/activitys/map', (req, res) => {
-  res.render('map', { dataType: 'activitys' });
+  res.render('map', { dataType: 'activitys', routePrefix: '/activitys' });
 });
 
 router.get('/activitys/:id', (req, res) => {

@@ -27,7 +27,7 @@ router.get('/stay/mapdata', (req, res) => {
 });
 
 router.get('/stay/map', (req, res) => {
-  res.render('map', {dataType: 'stay'});
+  res.render('map', {dataType: 'stay', routePrefix: '/stay'});
 });
 
 router.get('/stay/:id', (req, res) => {

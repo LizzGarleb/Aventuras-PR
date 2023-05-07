@@ -120,9 +120,10 @@
         </header>
     <main>
         <div id="map"></div>
+        <div id="list" class="d-none"></div>
         <div class="toggle-container d-flex justify-content-center align-items-center">
-            <button id="map-toggle" class="btn btn-toggle toggle-button active">Map</button>
-            <button id="list-toggle" class="btn btn-toggle toggle-button">List</button>
+            <button id="map-toggle" href="#" class="btn btn-toggle toggle-button active">Map</button>
+            <button id="list-toggle" href="<%= routePrefix %>" class="btn btn-toggle toggle-button">List</button>
         </div>
     </main>
     <script>
@@ -157,6 +158,26 @@
             })
             .catch(error => console.error('Error fetching map data:', error));
         });
+
+        document.addEventListener('DOMContentLoaded', () => {
+                const mapToggle = document.getElementById('map-toggle');
+                const listToggle = document.getElementById('list-toggle');
+                const mapContainer = document.getElementById('map');
+
+                if (mapToggle && listToggle && mapContainer) {
+                    mapToggle.addEventListener('click', () => {
+                        mapToggle.classList.add('active');
+                        listToggle.classList.remove('active');
+                        mapContainer.classList.remove('d-none');
+                    });
+
+                    listToggle.addEventListener('click', () => {
+                        // Redirect to the list route
+                        window.location.href = '<%= routePrefix %>';
+                    });
+                }
+            });
+
     </script>
 </body>
 

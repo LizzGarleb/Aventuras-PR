@@ -27,7 +27,7 @@ router.get('/restaurant/mapdata', (req, res) => {
   });
 
 router.get('/restaurant/map', (req, res) => {
-  res.render('map', {dataType: 'restaurant'});
+  res.render('map', {dataType: 'restaurant', rotePrefix: '/restaurant'});
 });
 
 router.get('/restaurant/:id', (req, res) => {
@@ -41,6 +41,7 @@ router.get('/restaurant/:id', (req, res) => {
       const information = result[0];
       const businessHours = JSON.parse(information.business_hours);
       const carouselImages = JSON.parse(information['carousel_images']);
+      
       Array.isArray(carouselImages) && carouselImages.length > 0;
 
       res.render('info', { information, businessHours, carouselImages });
