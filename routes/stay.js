@@ -43,8 +43,8 @@ router.get('/stay/:id', (req, res) => {
       const carouselImages = JSON.parse(information['carousel_images']);
 
       Array.isArray(carouselImages) && carouselImages.lenght > 0;
-      
-      res.render('info', { information, businessHours });
+
+      res.render('info', { information, businessHours, carouselImages });
     }
   });
 });
