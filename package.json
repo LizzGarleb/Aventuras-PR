@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "test": "mocha --recursive --exit",
     "devStart": "nodemon app.js"
   },
   "dependencies": {
@@ -20,10 +21,17 @@
     "mysql2": "^3.2.0",
     "nodemailer": "^6.9.1",
     "passport": "^0.6.0",
-    "passport-local": "^1.0.0"
+    "passport-google-oauth20": "^2.0.0",
+    "passport-local": "^1.0.0",
+    "three": "^0.152.2",
+    "three.js": "^0.77.0"
   },
   "devDependencies": {
+    "chai": "^4.3.7",
     "dotenv": "^16.0.3",
-    "nodemon": "^2.0.22"
+    "mocha": "^10.2.0",
+    "nodemon": "^2.0.22",
+    "supertest": "^6.3.3",
+    "vite": "^4.3.4"
   }
 }

@@ -40,6 +40,10 @@ router.get('/stay/:id', (req, res) => {
     } else {
       const information = result[0];
       const businessHours = JSON.parse(information.business_hours);
+      const carouselImages = JSON.parse(information['carousel_images']);
+
+      Array.isArray(carouselImages) && carouselImages.lenght > 0;
+      
       res.render('info', { information, businessHours });
     }
   });
