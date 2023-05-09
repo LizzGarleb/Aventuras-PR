@@ -5,7 +5,7 @@ if (process.env.NODE_ENV !== 'production') {
 const express = require('express');
 const bodyParser = require('body-parser');
 const hostname = 'localhost';
-const port = 5000;
+const port = 3000;
 const app = express();
 const authRoutes = require('./routes/auth');
 const activitysRoutes = require('./routes/activitys');
