@@ -1,0 +1,101 @@
+/* General Settings */
+:root {
+    --vibrant-teal: #26C6DA;
+    --warm-orange: #FFA726;
+    --cheerful-yellow: #FFEB3B;
+    --soft-green: #9CCC65;
+    --light-grey: #F5F5F5;
+    --dark-grey: #424242;
+}
+
+/* Fullscreen map */
+#map {
+    position: fixed;
+    top: 85px;
+    left: 0;
+    width: 100%;
+    height: calc(100% - 85px);
+    z-index: 1;
+}
+
+/* Navbar with bootstrap implemented*/
+.navbar {
+    background-color: var(--vibrant-teal);
+}
+
+.signup {
+    text-decoration: none;
+    color: var(--light-grey);
+    margin-right: 10px;
+    margin-top: 7px;
+}
+
+.login {
+    margin-bottom: 7px;
+}
+
+/* Toggle button with bootstrap implemented */
+.toggle-container {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 18px;
+    padding: 0;
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.toggle-button {
+    padding: 4px 9px;
+    cursor: pointer;
+    border: none;
+    background: none;
+    outline: none;
+    color: var(--dark-grey);
+    flex: 1;
+    margin: 0;
+}
+
+.toggle-button.active {
+    font-weight: bold;
+    background-color: var(--dark-grey);
+    color: #fff;
+    border-radius: 14px;
+}
+
+
+/* Card layout */
+#card {
+    color: var(--dark-grey)
+}
+.card {
+    background-color: var(--light-grey);
+    width: 250px;
+    height: fit-content;
+    border-radius: 5%;
+    padding: 15px;
+    color: var(--dark-grey);
+    text-align: center;
+}
+.card:hover {
+    text-decoration: none;
+    color: var(--dark-grey);
+}
+
+.image-area {
+    justify-content: center;
+    text-align: center;
+}
+
+.image-area img {
+    width: 100%;
+    border-radius: 0%;
+    max-height: fit-content;
+}
+
+
