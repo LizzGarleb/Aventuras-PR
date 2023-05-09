@@ -1,10 +1,10 @@
 :root {
-    --bittersweet: #ee6352;
-    --jet: #3a3335;
-    --pigmented-green: #53a548;
-    --papaya-whip: #fdf0d5;
-    --blue: #3277a9;
-    --light-grey: #cccccc;
+    --vibrant-teal: #26C6DA;
+    --warm-orange: #FFA726;
+    --cheerful-yellow: #FFEB3B;
+    --soft-green: #9CCC65;
+    --light-grey: #F5F5F5;
+    --dark-grey: #424242;
 }
 
 /* General Settings */
@@ -12,8 +12,8 @@ body {
     margin: 0;
     padding: 0;
     font-family: sans-serif;
-    color: black;
-    background-color: white;
+    color: var(--dark-grey);
+    background-color: var(--light-grey);
 }
 
 /* Manage the background*/
@@ -44,7 +44,6 @@ body {
     position: relative;
     box-shadow: 0 0 20px 9px #ff61241f;
     border-radius: 30px;
-    border: 1px solid red;
 }
 
 .toggle-btn {
@@ -66,7 +65,7 @@ body {
     position: absolute;
     width: 100px;
     height: 100%;
-    background: linear-gradient(to right, #ff105f, #ffad06);
+    background: linear-gradient(to right, var(--vibrant-teal), var(--soft-green));
     border-radius: 30px;
     transition: .5s;
 }
@@ -88,7 +87,7 @@ body {
 /* Horizontal line between social icons and form */
 hr.center {
     width: 30%;
-    border-top: 1px solid #333;
+    border-top: 1px solid var(--dark-grey);
     margin: auto;
 }
 
@@ -123,7 +122,7 @@ hr.center {
     cursor: pointer;
     display: block;
     margin: auto;
-    background: linear-gradient(to right, #ff105f, #ffad06);
+    background: linear-gradient(to right, var(--vibrant-teal), var(--soft-green));
     border: 0;
     outline: none;
     border-radius: 30px;

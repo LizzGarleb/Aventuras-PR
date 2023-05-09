@@ -1,11 +1,25 @@
+:root {
+    --vibrant-teal: #26C6DA;
+    --warm-orange: #FFA726;
+    --cheerful-yellow: #FFEB3B;
+    --soft-green: #9CCC65;
+    --light-grey: #F5F5F5;
+    --dark-grey: #424242;
+}
+
+html {
+    background-color: var(--light-grey);
+}
+
 /* Navbar with bootstrap implemented*/
 .navbar {
-    border-bottom: 1px #cccccc solid;
+    background-color: var(--vibrant-teal);
+    border-bottom: 1px var(--light-grey) solid;
 }
 
 .signup {
-    color: black;
     text-decoration: none;
+    color: var(--light-grey);
     margin-right: 10px;
     margin-top: 7px;
 }
@@ -16,10 +30,13 @@
 
 /* Card design  with bootstrap implemented */
 .container-fluid {
-    background-color: beige;
     border-radius: 20px;
     padding: 20px;
     max-width: 1700px;
+}
+.card {
+    text-decoration: none;
+    color: var(--dark-grey);
 }
 
 /* Footer with bootstrap implemented */

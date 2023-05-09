@@ -1,21 +1,21 @@
 /* General Settings */
 :root {
-    --bittersweet: #ee6352;
-    --jet: #3a3335;
-    --pigmented-green: #53a548;
-    --papaya-whip: #fdf0d5;
-    --blue: #3277a9;
-    --light-grey: #cccccc;
+    --vibrant-teal: #26C6DA;
+    --warm-orange: #FFA726;
+    --cheerful-yellow: #FFEB3B;
+    --soft-green: #9CCC65;
+    --light-grey: #F5F5F5;
+    --dark-grey: #424242;
 }
 
 /* Navbar with bootstrap implemented*/
 .navbar {
-    border-bottom: 1px #cccccc solid;
+    background-color: var(--vibrant-teal);
 }
 
 .signup {
-    color: black;
     text-decoration: none;
+    color: var(--light-grey);
     margin-right: 10px;
     margin-top: 7px;
 }
@@ -45,7 +45,7 @@
 
 /* Section 2 */
 .button-section {
-    background-color: var(--papaya-whip);
+    background-color: var(--light-grey);
 }
 
 .custom-btn {
