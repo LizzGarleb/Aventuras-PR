@@ -27,7 +27,7 @@ router.get('/restaurant/mapdata', (req, res) => {
   });
 
 router.get('/restaurant/map', (req, res) => {
-  res.render('map', {dataType: 'restaurant', rotePrefix: '/restaurant'});
+  res.render('map', {dataType: 'restaurant', routePrefix: '/restaurant'});
 });
 
 router.get('/restaurant/:id', (req, res) => {
