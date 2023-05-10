@@ -74,7 +74,8 @@ router.post('/login', (req, res) => {
         const isPasswordMatch = await bcrypt.compare(Contrasena, user.password);
   
         if (isPasswordMatch) {
-          res.status(200).send('Log in successful!'); // Redirect to dashboard if login is successful
+           // Redirect to dashboard if login is successful
+          res.render('dashboard');
         } else {
           res.status(401).send('Invalid email or password'); // Return an error message if login is unsuccessful
         }
@@ -110,11 +111,6 @@ router.post('/signup', async (req, res) => {
     console.error('Error creating user:', error);
     res.status(500).send('Error creating user');
   }
-});
-
-router.delete('/logout', (req, res) => {
-    req.logOut();
-    res.redirect('/login');
 });
 
 router.get('/verify-email', async (req, res) => {
