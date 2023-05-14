@@ -5,13 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Adventuras PR</title>
-    <link rel="stylesheet" type="text/css" href="/css/dashboard.css">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-</head>
-
+    <link rel="stylesheet" type="text/css" href="">
     <style>
         .main-container {
             display: flex;
@@ -106,32 +100,51 @@
         }
     </style>
 </head>
+
 <body>
     <header>
         <nav class="navbar">
-            <div class="nav-left px-2 py-2">
-                <a href="/">
-                    <img src="" alt="Logo" class="rounded-circle" height="70" width="70">
+            <div class="nav-left">
+                <a href="#">
+                    <img src="" alt="Logo"> <!-- TODO (Add logo img) -->
                 </a>
             </div>
-            <div class="nav-right d-flex">
-                <a href="/login" class="logout btn btn-primary">Log Out</a>
+            <div class="nav-right">
+                <a href="/logout" class="logout">Log Out</a>
             </div>
         </nav>
     </header>
-    <div class="main-container">
-        <div class="profile-container">
-            <img src="" alt="Profile Image" class="profile-photo">
-            <div class="profile-infor">
-                <h2 class="user-name">John Doe</h2>
-                <button class="change-btn">Change</button>
+    <main>
+        <div class="main-container">
+            <div class="profile-container">
+                <img src="" alt="Profile Image" class="profile-photo">
+                <div class="profile-infor">
+                    <h2 class="user-name">John Doe</h2>
+                    <button class="change-btn">Change</button>
+                </div>
+            </div>
+            <hr>
+            <div class="favorites-container">
+                <h2 class="favorites-title">Your Favorites</h2>
+                <div class="container">
+                    <% for (const card of data) { %>
+                        <div class="card">
+                            <div class="image-area">
+                                <img src="<%= card.image %>" alt="banner-pic">
+                            </div>
+                            <div class="content">
+                                <h2>
+                                    <%= card.name %>
+                                </h2>
+                                <address>
+                                    <%= card.location %>
+                                </address>
+                            </div>
+                        </div>
+                        <% } %>
+                </div>
             </div>
         </div>
-        <hr>
-       
-        </div>
-    </div>
-    <!-- Area of information about the account -->
     </main>
 </body>
 
