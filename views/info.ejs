@@ -58,12 +58,16 @@
             <div class="content row justify-content-between mt-4">
                 <div class="col-md-5">
                     <div class="business-hours">
-                        <p>Horarios de Servicio:</p>
-                        <ul>
-                            <% Object.entries(businessHours).map(([day, hours])=> { %>
-                                <li><%= day %>: <%= hours %></li>
-                            <% }); %>
-                        </ul>
+                        <% if (businessHours && Object.keys(businessHours).length> 0) { %>
+                            <p>Horarios de Servicio:</p>
+                            <ul>
+                                <% Object.entries(businessHours).map(([day, hours])=> { %>
+                                    <li>
+                                        <%= day %>: <%= hours %>
+                                    </li>
+                                <% }); %>
+                            </ul>
+                        <% } %>
                     </div>
                 </div>
                 <div class="col-md-5">
@@ -73,15 +77,15 @@
                             <hr>
                         <% } %>
                         <% if (information.website) { %>
-                            <p>Pagina Web: <%= information.website %></p>
+                            <p>Pagina Web: <a href="<%= information.website %>" target="_blank"><%= information.name %></a></p>
                             <hr>
                          <% } %>
                         <div class="social-icons">
                             <% if (information.facebook) { %>
-                                <a href="<%= information.facebook %>"><img src="../images/icons/facebook.png"alt=""></a>
+                                <a href="<%= information.facebook %>" target="_blank"><img src="../images/icons/facebook.png"alt=""></a>
                             <% } %>
                             <% if (information.instagram) { %>
-                                <a href="<%= information.instagram %>"><img src="../images/icons/instagram.png" alt=""></a>
+                                <a href="<%= information.instagram %>" target="_blank"><img src="../images/icons/instagram.png" alt=""></a>
                             <% } %>
                         </div>
                     </div>
@@ -109,7 +113,7 @@
                     </ul>
                 </div>
                 <div class="col-md-6">
-                    <form action="#" method="post">
+                    <form action="/subscribe" method="post" id="newsletter">
                         <label for="email">Subscribete a nuestro news letter:</label>
                         <div class="input-group">
                             <input type="email" class="form-control" id="email" name="email" placeholder="Email">
