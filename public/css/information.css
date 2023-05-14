@@ -8,7 +8,7 @@
 }
 
 
-main {
+html, body, main {
     background-color: var(--light-grey);
     color: var(--dark-grey);
 }
@@ -42,7 +42,7 @@ main {
 
 .swiper-slide img {
     width: 100%;
-    object-fit: fill;
+    /* object-fit: contain; */
 }
 
 .swiper .swiper-button-next,
@@ -52,6 +52,11 @@ main {
 
 .swiper .swiper-pagination-bullet-active {
     background-color: white;
+}
+
+.social-icons img {
+    width: 50px;
+    height: 50px;
 }
 
 /* Footer with bootstrap implemented */
