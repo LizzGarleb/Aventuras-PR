@@ -11,6 +11,7 @@ const authRoutes = require('./routes/auth');
 const activitysRoutes = require('./routes/activitys');
 const restaurantRoutes = require('./routes/restaurant');
 const stayRoutes = require('./routes/stay');
+const subscribeRoutes = require('./routes/subscribe');
 
 app.use(bodyParser.urlencoded({ extended: false }));
 
@@ -20,6 +21,7 @@ app.use(authRoutes);
 app.use(activitysRoutes);
 app.use(restaurantRoutes);
 app.use(stayRoutes);
+app.use(subscribeRoutes);
 
 app.use(express.static('public'));
 
