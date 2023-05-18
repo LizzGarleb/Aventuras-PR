@@ -47,7 +47,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-
+    border: var(--dark-grey) 2px solid;
 }
 
 .toggle-button {
