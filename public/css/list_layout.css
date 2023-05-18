@@ -34,10 +34,16 @@ html {
     padding: 20px;
     max-width: 1700px;
 }
+
 .card {
     text-decoration: none;
     color: var(--dark-grey);
 }
+.card-image img {
+    height: 200px;
+    object-fit: cover;
+}
+
 
 /* Footer with bootstrap implemented */
 .quick-links {
