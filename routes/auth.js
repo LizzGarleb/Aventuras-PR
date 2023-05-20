@@ -16,6 +16,7 @@ initializePassport(
     id => users.find(user => user.id === id)
 )
 
+// Connects to AventurasPR email, to send the verification to user
 async function sendVerificationEmail(email, verificationToken) {
   const transport = nodemailer.createTransport({
     service: 'gmail',
@@ -25,6 +26,7 @@ async function sendVerificationEmail(email, verificationToken) {
     },
   });
 
+  // Email format that will be sent
   const mailOptions = {
     from: 'puertoricoaventuras@gmail.com',
     to: email,
@@ -55,10 +57,10 @@ router.use(passport.initialize())
 router.use(passport.session())
 router.use(methodOverride('_method'))
 
+// Log In functionality
 router.get('/login', (req, res) => {
-  res.render('login');
+  res.render('login'); // Send the user to the login page
 });
-
 router.post('/login', (req, res) => {
   const { Email, Contrasena } = req.body;
 
@@ -87,10 +89,10 @@ router.post('/login', (req, res) => {
   
 });
 
+// Sign Up functionality
 router.get('/signup', (req, res) => {
-  res.render('login');
+  res.render('login'); // Send the user to the login page
 });
-
 router.post('/signup', async (req, res) => {
   try {
     const hashedPassword = await bcrypt.hash(req.body.Contrasena, 10);
@@ -113,6 +115,8 @@ router.post('/signup', async (req, res) => {
   }
 });
 
+
+// Save user verification token in the db
 router.get('/verify-email', async (req, res) => {
   const verificationToken = req.query.token;
   
@@ -124,12 +128,15 @@ router.get('/verify-email', async (req, res) => {
     } else {
       if (result.affectedRows === 1) {
         res.status(200).send('Email verification successful! You can now log in.');
+        // call welcome email function
       } else {
         res.status(400).send('Invalid verification token');
       }
     }
   });
 });
+
+// Function that sends the Welcome email message
 
 
 module.exports = router

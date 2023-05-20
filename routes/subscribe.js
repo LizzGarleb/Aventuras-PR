@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 const pool = require('../config/db_connection');
 
+// Subscription form at the footer
 router.post('/subscribe', (req, res) => {
     const email = req.body.email
     const query = 'INSERT INTO newsletter (email) VALUES (?)';

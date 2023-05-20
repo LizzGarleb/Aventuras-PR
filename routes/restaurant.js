@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 const pool = require('../config/db_connection');
 
+// Shows the restaurant list version
 router.get('/restaurant', (req, res) => {
     const query = 'SELECT * FROM restaurants';
     pool.query(query, (error, result) => {
@@ -14,6 +15,7 @@ router.get('/restaurant', (req, res) => {
     });
 });
 
+// Get the restaurant data from db to render to the map
 router.get('/restaurant/mapdata', (req, res) => {
     const query = 'SELECT * FROM restaurants';
     pool.query(query, (error, result) => {
@@ -26,10 +28,12 @@ router.get('/restaurant/mapdata', (req, res) => {
     });
   });
 
+// Render the map version
 router.get('/restaurant/map', (req, res) => {
   res.render('map', {dataType: 'restaurant', routePrefix: '/restaurant'});
 });
 
+// Open the card the user tapped
 router.get('/restaurant/:id', (req, res) => {
   const id = req.params.id;
   const query = 'SELECT * FROM restaurants WHERE id = ?';

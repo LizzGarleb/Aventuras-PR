@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 const pool = require('../config/db_connection');
 
+// Show the list version
 router.get('/stay', (req, res) => {
     const query = 'SELECT * FROM stay';
     pool.query(query, (error, result) => {
@@ -14,6 +15,7 @@ router.get('/stay', (req, res) => {
     });
 });
 
+// Get the data from db to render to the map
 router.get('/stay/mapdata', (req, res) => {
     const query = 'SELECT * FROM stay';
     pool.query(query, (error, result) => {
@@ -26,10 +28,12 @@ router.get('/stay/mapdata', (req, res) => {
     });
 });
 
+// Render the map version
 router.get('/stay/map', (req, res) => {
   res.render('map', {dataType: 'stay', routePrefix: '/stay'});
 });
 
+// Open the card the user tapped
 router.get('/stay/:id', (req, res) => {
   const id = req.params.id;
   const query = 'SELECT * FROM stay WHERE id = ?';
