@@ -106,8 +106,12 @@ router.post('/signup', async (req, res) => {
         res.status(500).send('Error saving data');
       } else {
         await sendVerificationEmail(Email, verificationToken);
-        res.status(200).send('Registration successful! Please check your email for verification.');
-      }
+        res.send(`
+                <script>
+                    alert("Registration sucessfull! Please check your email for verification.");
+                    window.location.href="/";
+                </script>
+            `)};
     });
   } catch (error) {
     console.error('Error creating user:', error);
@@ -116,19 +120,38 @@ router.post('/signup', async (req, res) => {
 });
 
 
-// Save user verification token in the db
+// Save user verification token in the db & fetch email for Welcome Message
 router.get('/verify-email', async (req, res) => {
   const verificationToken = req.query.token;
-  
-  const query = 'UPDATE users SET verified = 1 WHERE verification_token = ?';
+
+  const query = 'SELECT email FROM users WHERE verification_token = ?';
   pool.query(query, [verificationToken], (error, result) => {
     if (error) {
       console.error('Error verifying email:', error);
       res.status(500).send('Error verifying email');
     } else {
-      if (result.affectedRows === 1) {
-        res.status(200).send('Email verification successful! You can now log in.');
-        // call welcome email function
+      if (result.length === 1) {
+        const email = result[0].email;
+        const updateQuery = 'UPDATE users SET verified = 1 WHERE verification_token = ?';
+        pool.query(updateQuery, [verificationToken], (error, result) => {
+          if (error) {
+            console.error('Error verifying email:', error);
+            res.status(500).send('Error verifying email');
+          } else {
+            if (result.affectedRows === 1) {
+              sendWelcomeEmail(email)
+                .then(() => {
+                  res.status(200).send('Email verification successful! You can now log in.');
+                })
+                .catch((error) => {
+                  console.error('Error:', error);
+                  res.status(500).send('Error sending welcome email.');
+                });
+            } else {
+              res.status(400).send('Invalid verification token');
+            }
+          }
+        });
       } else {
         res.status(400).send('Invalid verification token');
       }
@@ -136,7 +159,30 @@ router.get('/verify-email', async (req, res) => {
   });
 });
 
-// Function that sends the Welcome email message
 
+// Function that sends the Welcome email message
+async function sendWelcomeEmail(userEmail) {
+  const transport = nodemailer.createTransport({
+    service: 'gmail',
+    auth: {
+      user: 'puertoricoaventuras@gmail.com',
+      pass: 'nierbvcxlciyjfew'
+    },
+  });
+
+  const info = {
+    from: '"Aventuras PR" puertoricoaventuras@gmail.com',
+    to: userEmail,
+    subject: 'Welcome to Aventuras PR',
+    text: 'Welcome to Aventuras PR, we\'re excited to have you onboard!',
+  }
+
+  try {
+    await transport.sendMail(info);
+    console.log('Message sent successfully');
+  } catch (err) {
+    console.error('Error sending message:', err);
+  }
+}
 
 module.exports = router
