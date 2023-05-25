@@ -1,9 +1,14 @@
-V. API Documentation
-Our web application provides a RESTful API with the following endpoints:
+# Aventuras PR API Documentation
+Welcome to the Aventuras PR API Documentation. This document provides an overview of the API endpoints, their functionalities, and how to use them to interact with the Aventuras PR web application. 
 
-User Endpoints
-'POST /register': Create a new user account
-'POST /login' : Authenticate a user
-Places Endpoints
-'GET /activity or /restaurants or /stay': Retrieves and showcase the data in a list version
-'GET /activity/map or /restaurants/map or /stay/map': Retrieves ans showcase the data in the interactive map
+## I. Base URL
+The base URL for all API endpoints is: 'INSERT URL'
+
+## II. Endpoints
+
+### Activity, Restaurants, Entertainment
+- GET /<Prefix/> Retrieve a list of activities.
+- GET /<Prefix/>/:id Retrieve details of a specific activity.
+- GET /<Prefix/>/map Generates the interactive map
+
+### Request & Response Example 
