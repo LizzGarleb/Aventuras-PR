@@ -1,6 +1,8 @@
-if (process.env.NODE_ENV !== 'production') {
-  require('dotenv').config()
-}
+// if (process.env.NODE_ENV !== 'production') {
+//   require('dotenv').config()
+// }
+
+require('dotenv').config()
 
 const express = require('express');
 const bodyParser = require('body-parser');
@@ -13,6 +15,7 @@ const restaurantRoutes = require('./routes/restaurant');
 const stayRoutes = require('./routes/stay');
 const subscribeRoutes = require('./routes/subscribe');
 const session = require('express-session');
+const session_secret = process.env.SESSION_SECRET;
 
 app.use(bodyParser.urlencoded({ extended: false }));
 
@@ -25,15 +28,12 @@ app.use(restaurantRoutes);
 app.use(stayRoutes);
 app.use(subscribeRoutes);
 
-app.use(
-  session({
-    secret: 'I7zikwcWONU3OKW1',
+app.use(session({
+    secret: session_secret,
     resave: false,
     saveUninitialized: false,
   })
 );
-
-
 
 app.use(express.static('public')); // Any static file will be in public folder
 

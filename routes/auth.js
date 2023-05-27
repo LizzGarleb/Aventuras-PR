@@ -9,6 +9,11 @@ const methodOverride = require('method-override');
 const nodemailer = require('nodemailer');
 const crypto = require('crypto');
 
+const comp_pass = process.env.COMPANY_PASS;
+const comp_email = process.env.COMPANY_EMAIL;
+
+
+
 const initializePassport = require('../config/passport-config')
 initializePassport(
     passport, 
@@ -21,14 +26,14 @@ async function sendVerificationEmail(email, verificationToken) {
   const transport = nodemailer.createTransport({
     service: 'gmail',
     auth: {
-      user: 'puertoricoaventuras@gmail.com',
-      pass: 'nierbvcxlciyjfew'
+      user: comp_email,
+      pass: comp_pass
     },
   });
 
   // Email format that will be sent
   const mailOptions = {
-    from: 'puertoricoaventuras@gmail.com',
+    from: comp_email,
     to: email,
     subject: 'Email Verification - Aventuras PR',
     html: `
@@ -48,11 +53,6 @@ async function sendVerificationEmail(email, verificationToken) {
 
 router.use(express.urlencoded({ extended: false }));
 router.use(flash())
-router.use(session({
-    secret: process.env.SESSION_SECRET,
-    resave: false,
-    saveUninitialized: false
-}))
 router.use(passport.initialize())
 router.use(passport.session())
 router.use(methodOverride('_method'))
@@ -178,8 +178,8 @@ async function sendWelcomeEmail(userEmail) {
   const transport = nodemailer.createTransport({
     service: 'gmail',
     auth: {
-      user: 'puertoricoaventuras@gmail.com',
-      pass: 'nierbvcxlciyjfew'
+      user: comp_email,
+      pass: comp_pass
     },
   });
 
