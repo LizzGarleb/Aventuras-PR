@@ -74,10 +74,15 @@ router.post('/login', (req, res) => {
       if (result.length === 1) {
         const user = result[0];
         const isPasswordMatch = await bcrypt.compare(Contrasena, user.password);
-  
+
         if (isPasswordMatch) {
-           // Redirect to dashboard if login is successful
-          res.render('dashboard');
+          req.session.user = {
+            name: user.name,
+            last_name: user.last_name,
+            email: user.email,
+            profileImage: user.profileImage // Add this field in your 'users' table
+          }
+          res.redirect('dashboard');
         } else {
           res.status(401).send('Invalid email or password'); // Return an error message if login is unsuccessful
         }
@@ -86,8 +91,16 @@ router.post('/login', (req, res) => {
       }
     }
   });
-  
 });
+
+router.get('/dashboard', (req, res) => {
+  if (!req.session.user) {
+    res.redirect('/login');
+  } else {
+    res.render('dashboard', { user: req.session.user });
+  }
+});
+
 
 // Sign Up functionality
 router.get('/signup', (req, res) => {

@@ -12,6 +12,7 @@ const activitysRoutes = require('./routes/activitys');
 const restaurantRoutes = require('./routes/restaurant');
 const stayRoutes = require('./routes/stay');
 const subscribeRoutes = require('./routes/subscribe');
+const session = require('express-session');
 
 app.use(bodyParser.urlencoded({ extended: false }));
 
@@ -23,6 +24,16 @@ app.use(activitysRoutes);
 app.use(restaurantRoutes);
 app.use(stayRoutes);
 app.use(subscribeRoutes);
+
+app.use(
+  session({
+    secret: 'I7zikwcWONU3OKW1',
+    resave: false,
+    saveUninitialized: false,
+  })
+);
+
+
 
 app.use(express.static('public')); // Any static file will be in public folder
 
