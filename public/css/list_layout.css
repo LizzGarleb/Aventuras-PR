@@ -44,6 +44,40 @@ html {
     object-fit: cover;
 }
 
+/* Toggle button with bootstrap implemented */
+.toggle-container {
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 18px;
+    padding: 0;
+    width: min-content;
+    border: var(--dark-grey) 2px solid;
+    margin: 10px;
+}
+.toggle-container-container {
+    display: flex;
+    justify-content: flex-end;
+}
+.toggle-button {
+    padding: 4px 9px;
+    cursor: pointer;
+    border: none;
+    background: none;
+    outline: none;
+    color: var(--dark-grey);
+    flex: 1;
+    margin-top: 0;
+}
+
+.toggle-button.active {
+    font-weight: bold;
+    background-color: var(--dark-grey);
+    color: #fff;
+    border-radius: 14px;
+}
+
+.toggle-button.active:hover {
+    color: #fff;
+}
 
 /* Footer with bootstrap implemented */
 .quick-links {

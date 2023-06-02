@@ -11,10 +11,10 @@
 /* Fullscreen map */
 #map {
     position: fixed;
-    top: 85px;
+    top: 61px;
     left: 0;
     width: 100%;
-    height: calc(100% - 85px);
+    height: 100vh;
     z-index: 1;
 }
 
@@ -68,6 +68,9 @@
     border-radius: 14px;
 }
 
+.toggle-button.active:hover {
+    color: #fff;
+}
 
 /* Card layout */
 #card {
