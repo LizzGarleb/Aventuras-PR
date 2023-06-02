@@ -11,7 +11,42 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </head>
+<style>
+    @media (max-width: 768px) {
+        .carousel-inner .carousel-item>div {
+            display: none;
+        }
 
+        .carousel-inner .carousel-item>div:first-child {
+            display: block;
+        }
+    }
+
+    .carousel-inner .carousel-item.active,
+    .carousel-inner .carousel-item-next,
+    .carousel-inner .carousel-item-prev {
+        display: flex;
+    }
+
+    /* display 3 */
+    @media (min-width: 768px) {
+
+        .carousel-inner .carousel-item-right.active,
+        .carousel-inner .carousel-item-next {
+            transform: translateX(33.333%);
+        }
+
+        .carousel-inner .carousel-item-left.active,
+        .carousel-inner .carousel-item-prev {
+            transform: translateX(-33.333%);
+        }
+    }
+
+    .carousel-inner .carousel-item-right,
+    .carousel-inner .carousel-item-left {
+        transform: translateX(0);
+    }
+</style>
 <body>
     <header>
         <nav class="navbar">
@@ -221,11 +256,12 @@
         <script>
             $('.carousel').each(function () {
                     $(this).carousel({
-                        interval: 10000
+                        interval: 10000,
+                        wrap: true
                     })
 
                     $(this).find('.carousel-item').each(function () {
-                        var minPerSlide = 3;
+                        var minPerSlide = 1;
                         var next = $(this).next();
                         if (!next.length) {
                             next = $(this).siblings(':first');

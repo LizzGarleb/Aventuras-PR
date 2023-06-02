@@ -7,7 +7,6 @@
     --dark-grey: #424242;
 }
 
-
 html, body, main {
     background-color: var(--light-grey);
     color: var(--dark-grey);
@@ -27,31 +26,6 @@ html, body, main {
 
 .login {
     margin-bottom: 7px;
-}
-
-/* Carousel */
-.container-fluid {
-    background: #222;
-    margin-bottom: 10px;
-}
-
-.swiper {
-    width: 100%;
-    height: 500px;
-}
-
-.swiper-slide img {
-    width: 100%;
-    /* object-fit: contain; */
-}
-
-.swiper .swiper-button-next,
-.swiper .swiper-button-prev {
-    color: white;
-}
-
-.swiper .swiper-pagination-bullet-active {
-    background-color: white;
 }
 
 .social-icons img {
