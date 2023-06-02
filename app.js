@@ -2,6 +2,7 @@ require('dotenv').config()
 
 const express = require('express');
 const bodyParser = require('body-parser');
+const passport = require('passport');
 const hostname = 'localhost';
 const port = 3000;
 const app = express();
@@ -17,23 +18,23 @@ app.use(bodyParser.urlencoded({ extended: false }));
 
 app.set('view engine', 'ejs'); // Dynamic files will be in views folder, powered by EJS engine
 
-// Where the app is gonna moved around
+app.use(session({
+  secret: session_secret,
+  resave: false,
+  saveUninitialized: false,
+})
+);
+
+app.use(passport.initialize());
+app.use(passport.session());
 app.use(authRoutes);
 app.use(activitysRoutes);
 app.use(restaurantRoutes);
 app.use(stayRoutes);
 app.use(subscribeRoutes);
+app.use(express.static('public'));
 
-app.use(session({
-    secret: session_secret,
-    resave: false,
-    saveUninitialized: false,
-  })
-);
-
-app.use(express.static('public')); // Any static file will be in public folder
-
-// Local host 
+// Local host
 app.listen(port, hostname, () => {
   console.log(`Server started at http://${hostname}:${port}`);
 });
