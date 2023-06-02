@@ -4,14 +4,11 @@ const pool = require('../config/db_connection');
 const bcrypt = require('bcrypt');
 const passport = require('passport');
 const flash = require('express-flash');
-const session = require('express-session');
 const methodOverride = require('method-override');
 const nodemailer = require('nodemailer');
 const crypto = require('crypto');
-
 const comp_pass = process.env.COMPANY_PASS;
 const comp_email = process.env.COMPANY_EMAIL;
-
 
 
 const initializePassport = require('../config/passport-config')
