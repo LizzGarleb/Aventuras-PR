@@ -72,38 +72,19 @@
                         <div class="carousel-item active">
                             <div class="col-md-4">
                                 <div class="card card-body">
-                                    <img class="img-fluid" src="http://placehold.it/380?text=1">
+                                    <img class="img-fluid" src="<%= information.image %>">
                                 </div>
                             </div>
                         </div>
-                        <div class="carousel-item">
-                            <div class="col-md-4">
-                                <div class="card card-body">
-                                    <img class="img-fluid" src="http://placehold.it/380?text=2">
+                        <% for (let i=0; i < carouselImages.length; i++) { %>
+                            <div class="carousel-item <%= i === 0 ? '' : '' %>">
+                                <div class="col-md-4">
+                                    <div class="card card-body">
+                                        <img class="img-fluid" src="<%= carouselImages[i].src %>" alt="<%= carouselImages[i].alt %>">
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="carousel-item">
-                            <div class="col-md-4">
-                                <div class="card card-body">
-                                    <img class="img-fluid" src="http://placehold.it/380?text=3">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="carousel-item">
-                            <div class="col-md-4">
-                                <div class="card card-body">
-                                    <img class="img-fluid" src="http://placehold.it/380?text=4">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="carousel-item">
-                            <div class="col-md-4">
-                                <div class="card card-body">
-                                    <img class="img-fluid" src="http://placehold.it/380?text=5">
-                                </div>
-                            </div>
-                        </div>
+                        <% } %>
                     </div>
                     <a class="carousel-control-prev w-auto" href="#recipeCarousel" role="button" data-slide="prev">
                         <span class="carousel-control-prev-icon bg-dark border border-dark rounded-circle"
@@ -199,31 +180,7 @@
             </div>
         </div>
     </footer>
-    <!-- <script src="../js/information.js"></script> -->
-        <script>
-            $('#recipeCarousel').carousel({
-                interval: 10000,
-                wrap: true
-            })
-
-            $('.carousel .carousel-item').each(function () {
-                var minPerSlide = 1;
-                var next = $(this).next();
-                if (!next.length) {
-                    next = $(this).siblings(':first');
-                }
-                next.children(':first-child').clone().appendTo($(this));
-
-                for (var i = 0; i < minPerSlide; i++) {
-                    next = next.next();
-                    if (!next.length) {
-                        next = $(this).siblings(':first');
-                    }
-
-                    next.children(':first-child').clone().appendTo($(this));
-                }
-            });
-        </script>
+    <script src="../js/information.js"></script>
 </body>
 
 </html>
