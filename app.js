@@ -13,6 +13,13 @@ const stayRoutes = require('./routes/stay');
 const subscribeRoutes = require('./routes/subscribe');
 const session = require('express-session');
 const session_secret = process.env.SESSION_SECRET;
+const cloudinary = require('cloudinary').v2;
+
+cloudinary.config({
+  cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
+  api_key: process.env.CLOUDINARY_API_KEY,
+  api_secret: process.env.CLOUDINARY_API_SECRET
+});
 
 app.use(bodyParser.urlencoded({ extended: false }));
 
