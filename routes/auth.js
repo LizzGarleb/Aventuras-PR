@@ -77,7 +77,7 @@ router.post('/login', (req, res) => {
             name: user.name,
             last_name: user.last_name,
             email: user.email,
-            profileImage: user.profileImage // Add this field in your 'users' table
+            profileImg: user.profileImg
           }
           res.redirect('dashboard');
         } else {
