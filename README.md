@@ -29,6 +29,7 @@ Aventuras PR is a web application built to serve as a comprehensive guide for us
 ![Amazon AWS](https://img.shields.io/badge/Amazon_AWS-FF9900?style=for-the-badge&logo=amazonaws&logoColor=white)
 ![My SQL](https://img.shields.io/badge/MySQL-005C84?style=for-the-badge&logo=mysql&logoColor=white)
 ![Passport](https://img.shields.io/badge/Passport-34E27A.svg?style=for-the-badge&logo=Passport&logoColor=white)
+![Cloudinary](https://img.shields.io/badge/Cloudinary-important?style=for-the-badge)
 
 ## V. Features
 (Screenshots of features)
