@@ -3,8 +3,8 @@ require('dotenv').config()
 const express = require('express');
 const bodyParser = require('body-parser');
 const passport = require('passport');
-const hostname = 'localhost';
-const port = 3000;
+// const hostname = 'localhost';
+// const port = 3000;
 const app = express();
 const authRoutes = require('./routes/auth');
 const activitysRoutes = require('./routes/activitys');
@@ -42,8 +42,8 @@ app.use(subscribeRoutes);
 app.use(express.static('public'));
 
 // Local host
-app.listen(port, hostname, () => {
-  console.log(`Server started at http://${hostname}:${port}`);
-});
+// app.listen(port, hostname, () => {
+//   console.log(`Server started at http://${hostname}:${port}`);
+// });
 
 module.exports = app;
