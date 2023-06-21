@@ -1,0 +1,44 @@
+/* General Settings */
+:root {
+    --vibrant-teal: #26C6DA;
+    --warm-orange: #FFA726;
+    --cheerful-yellow: #FFEB3B;
+    --soft-green: #9CCC65;
+    --light-grey: #F5F5F5;
+    --dark-grey: #424242;
+}
+
+/* Navbar with bootstrap implemented*/
+.navbar {
+    background-color: var(--vibrant-teal);
+}
+
+.signup {
+    text-decoration: none;
+    color: var(--light-grey);
+    margin-right: 10px;
+    margin-top: 7px;
+}
+
+.login {
+    margin-bottom: 7px;
+}
+
+.black-bg {
+    background-color: #111418;
+}
+
+.text-white {
+    color: white;
+    
+}
+
+/* Footer with bootstrap implemented */
+.quick-links {
+    list-style: none;
+}
+
+.quick-links a {
+    text-decoration: none;
+    color: white;
+}
