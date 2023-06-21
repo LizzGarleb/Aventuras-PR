@@ -6,7 +6,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const passport = require('passport');
 // const hostname = '0.0.0.0';
-// const port = 3000;
+const port = process.env.PORT || 3000;
 const app = express();
 const authRoutes = require('./routes/auth');
 const activitysRoutes = require('./routes/activitys');
@@ -51,5 +51,9 @@ app.use(express.static('public'));
 // app.listen(port, hostname, () => {
 //   console.log(`Server started at http://${hostname}:${port}`);
 // });
+
+app.listen(port, function () {
+  console.log('Your node.js server is running on PORT:', port);
+});
 
 module.exports = app;
