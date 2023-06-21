@@ -13,7 +13,7 @@ const activitysRoutes = require('./routes/activitys');
 const restaurantRoutes = require('./routes/restaurant');
 const stayRoutes = require('./routes/stay');
 const subscribeRoutes = require('./routes/subscribe');
-const session = require('express-session');
+const session = require('cookie-session');
 const session_secret = process.env.SESSION_SECRET;
 const cloudinary = require('cloudinary').v2;
 
@@ -31,6 +31,10 @@ app.use(session({
   secret: session_secret,
   resave: false,
   saveUninitialized: false,
+  cookies: {
+    secure: true,
+    maxAge: 24 * 60 * 60 * 1000,
+  }
 })
 );
 
