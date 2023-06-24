@@ -1,6 +1,5 @@
 # Aventuras PR
 
-(Demo link available here...)
 
 ## I. Project Description
 Aventuras PR is a web application built to serve as a comprehensive guide for users looking to explore the adventures that Puerto Rico has to offer. The application provides information about various activities, restaurants, and stay around Puerto Rico. 
@@ -17,9 +16,6 @@ Aventuras PR is a web application built to serve as a comprehensive guide for us
 - [Contributing](#vii-contributing)
 - [Contact Information](#viii-contact-information)
 - [Project Status](#ix-project-status)
-
-## III. Table of Content
-
 
 ## IV. Technologies Used
 
