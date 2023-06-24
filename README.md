@@ -1,5 +1,10 @@
-# Aventuras PR
+<h4 align="center">
+    <div class="HeaderSticker">
+        <img src="https://github.com/LizzGarleb/Aventuras-PR/assets/96942307/ac23d2fb-ea21-4203-8ded-fece0405bec9" alt="Aventuras PR logo"/>
+    </div>
+</h4>
 
+[![Aventuras PR](https://img.shields.io/badge/AventurasPR-important?style=for-the-badge)](https://aventuras-pr-production-81d2.up.railway.app/index.html)
 
 ## I. Project Description
 Aventuras PR is a web application built to serve as a comprehensive guide for users looking to explore the adventures that Puerto Rico has to offer. The application provides information about various activities, restaurants, and stay around Puerto Rico. 
@@ -38,7 +43,6 @@ Aventuras PR is a web application built to serve as a comprehensive guide for us
 ![Cloudinary](https://img.shields.io/badge/Cloudinary-important?style=for-the-badge)
 
 ## V. Features
-(Screenshots of features)
 - User Registration & Email Verification: Users can create an account and verify their email to gain access to all the features.
 
 - Favorites: Registered users can add or remove places from their favorites, allowing for easy access and planning later. 
@@ -58,7 +62,7 @@ Please note that the above features are under consideration and the timeline for
 Contributions are welcome. Please open an issue to discuss your ideas before making substantial pull requests.
 
 ## VIII. Contact Information
-For any questions, feedback, or collaboration opportunities, please contact us at (INSERT EMAIL HERE).
+For any questions, feedback, or collaboration opportunities, please contact us at puertoricoaventuras@gmail.com
 
 ## IX. Project Status
 This project is currently in the development phase. More features and improvement are planned for the future.
