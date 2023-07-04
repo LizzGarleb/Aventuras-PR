@@ -5,25 +5,22 @@
 </h4>
 
 [![Aventuras PR](https://img.shields.io/badge/AventurasPR-important?style=for-the-badge)](https://aventuras-pr-production-81d2.up.railway.app/index.html)
+[![Demo Video](https://img.shields.io/badge/Demo%20Video-green?style=for-the-badge)](https://youtu.be/BFsbIgNSuNo)
 
 ## I. Project Description
 Aventuras PR is a web application built to serve as a comprehensive guide for users looking to explore the adventures that Puerto Rico has to offer. The application provides information about various activities, restaurants, and stay around Puerto Rico. 
 
-## II. Demo Video
-## III. Table of Contents
-
+## II. Table of Contents
 - [Project Description](#i-project-description)
-- [Demo Video](#ii-demo-video)
-- [Table of Contents](#iii-table-of-contents)
-- [Technologies Used](#iv-technologies-used)
-- [Features](#v-features)
-- [Roadmap](#vi-roadmap)
-- [Contributing](#vii-contributing)
-- [Contact Information](#viii-contact-information)
-- [Project Status](#ix-project-status)
+- [Table of Contents](#ii-table-of-contents)
+- [Technologies Used](#iii-technologies-used)
+- [Features](#iv-features)
+- [Roadmap](#v-roadmap)
+- [Contributing](#vi-contributing)
+- [Contact Information](#vii-contact-information)
+- [Project Status](#viii-project-status)
 
-## IV. Technologies Used
-
+## III. Technologies Used
 ### Front-End ✈️
 
 ![HTML 5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
@@ -42,12 +39,13 @@ Aventuras PR is a web application built to serve as a comprehensive guide for us
 ![Passport](https://img.shields.io/badge/Passport-34E27A.svg?style=for-the-badge&logo=Passport&logoColor=white)
 ![Cloudinary](https://img.shields.io/badge/Cloudinary-important?style=for-the-badge)
 
-## V. Features
+
+## IV. Features
 - User Registration & Email Verification: Users can create an account and verify their email to gain access to all the features.
 
 - Favorites: Registered users can add or remove places from their favorites, allowing for easy access and planning later. 
 
-## VI. Roadmap
+## V. Roadmap
 While our application currently provides robust functionality for users to explore activities, restaurants, and stays in Puerto Rico, our vision extends beyond these freature. Here's a glimpse of what's next for Aventuras PR:
 
 1. Expanded User Profiles: We aim to provide more personalization to our users by expandind user profile to include preferences, reviews & ratings.
@@ -58,11 +56,12 @@ While our application currently provides robust functionality for users to explo
 
 Please note that the above features are under consideration and the timeline for their implementation may vary.
 
-## VII. Contributing
+
+## VI. Contributing
 Contributions are welcome. Please open an issue to discuss your ideas before making substantial pull requests.
 
-## VIII. Contact Information
+## VII. Contact Information
 For any questions, feedback, or collaboration opportunities, please contact us at puertoricoaventuras@gmail.com
 
-## IX. Project Status
+## VIII. Project Status
 This project is currently in the development phase. More features and improvement are planned for the future.
