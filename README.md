@@ -48,7 +48,7 @@ Aventuras PR is a web application built to serve as a comprehensive guide for us
 ## V. Roadmap
 While our application currently provides robust functionality for users to explore activities, restaurants, and stays in Puerto Rico, our vision extends beyond these freature. Here's a glimpse of what's next for Aventuras PR:
 
-1. Expanded User Profiles: We aim to provide more personalization to our users by expandind user profile to include preferences, reviews & ratings.
+1. Expanded User Profiles: We aim to provide more personalization to our users by expanding user profile to include preferences, reviews & ratings.
 
 2. Social Integration: Plans are underway to integrate with social media platforms. Users will be able to share their favorite places or experiences on their social media directly from our application.
 
