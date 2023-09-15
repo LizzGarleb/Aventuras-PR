@@ -4,7 +4,6 @@
     </div>
 </h4>
 
-[![Aventuras PR](https://img.shields.io/badge/AventurasPR-important?style=for-the-badge)](https://aventuras-pr-production-81d2.up.railway.app/index.html)
 [![Demo Video](https://img.shields.io/badge/Demo%20Video-green?style=for-the-badge)](https://youtu.be/BFsbIgNSuNo)
 
 ## I. Project Description
